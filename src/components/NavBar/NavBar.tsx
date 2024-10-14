@@ -1,24 +1,33 @@
 import { FaceHappyIcon, GamePadIcon, HomeIcon, PriceIcon, RouteIcon } from "@/components"
+import { cn } from "@/helpers/cn"
 import React from "react"
 
-const NavBarList = ({children , className}) =>{
-  return (
-    <ul className={`my-4 border-t border-indigo-400/40 hover:border-indigo-400/40 ${className}`}>
-      {children}
-    </ul>
-  )
+  type NavBarProps =  React.ComponentProps<"nav">
+  type NavBarListProps =  React.ComponentProps<"ul">
+  type NavBarListItemProps =  React.ComponentProps<"li">
+
+  const NavBarList = ({children , className, ...props}: NavBarListProps) =>{
+    return (
+      <ul className={cn("my-4 border-t border-indigo-400/40 hover:border-indigo-400/40" ,className)}{...props}>
+        {children}
+      </ul>
+    )
 }
-const NavBarListItem = ({children , className}) =>{
+const NavBarListItem = ({children , className,...props}: NavBarListItemProps) =>{
   return (
-    <li className={`my-2 rounded-lg bg-transparent p-2  hover:bg-indigo-400/40 cursor-pointer hover:text-slate-100 flex gap-2 items-center ${className}`}>
+    <li className={cn("my-2 rounded-lg bg-transparent p-2  hover:bg-indigo-400/40 cursor-pointer hover:text-slate-100 flex gap-2 items-center",className)}
+    {...props}
+    >
     {children}
     </li>
   )
 }
 
-export const NavBar = ()=>{
+export  const NavBar = ({className, ...props}:NavBarProps)=>{
     return (
-        <nav className="flex h-screen flex-col  bg-slate-900 border-r border-indigo-400/20 text-slate-400 hover:border-indigo-800/40 w-72 p-2">
+        <nav className={cn("flex h-screen flex-col  bg-slate-900 border-r border-indigo-400/20 text-slate-400 hover:border-indigo-800/40 w-72 p-2",className)}
+        {...props}
+        >
           <div className="flex items-center justify-center">
             <img
               src="https://emersonbroga.com/e/assets/emersonbroga-logo-name-pink.png"
