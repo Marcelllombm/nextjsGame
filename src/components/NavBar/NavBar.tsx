@@ -1,39 +1,13 @@
 import { FaceHappyIcon, GamePadIcon, HomeIcon, PriceIcon, RouteIcon } from "@/components"
 import { cn } from "@/helpers/cn"
-import Link from "next/link"
 import React from "react"
+import { NavBarProps } from "./types"
+import { NavBarList } from "./NavBarList"
+import { NavBarListItemLink } from "./NavBarListItemLink"
+import { NavBarListItemButton } from "./NavBarListItemButton"
 
-  type NavBarProps =  React.ComponentProps<"nav">
-  type NavBarListProps =  React.ComponentProps<"ul">
-  type NavBarListItemProps =  React.ComponentProps<"li">
-  type NavBarListItemLinkProps = React.ComponentProps<typeof Link>
+ 
 
-  const NavBarList = ({children , className, ...props}: NavBarListProps) =>{
-    return (
-      <ul className={cn("my-4 border-t border-indigo-400/40 hover:border-indigo-400/40" ,className)}{...props}>
-        {children}
-      </ul>
-    )
-}
-const NavBarListItem = ({children , className,...props}: NavBarListItemProps) =>{
-  return (
-    <li className={cn("my-2 rounded-lg bg-transparent p-2  hover:bg-indigo-400/40 cursor-pointer hover:text-slate-100 flex gap-2 items-center",className)}
-    {...props}
-    >
-    {children}
-    </li>
-  )
-}
-
-const NavBarListItemLink = ({href, children, className, ...props}: NavBarListItemLinkProps) =>{
-  return(
-    <NavBarListItem className={cn("p-0", className)}>
-      <Link href={href} className="flex gap-2 items-center p-2 w-full rounded-lg " {...props}>
-      {children}
-      </Link>
-    </NavBarListItem>
-  )
-}
 export  const NavBar = ({className, ...props}:NavBarProps)=>{
     return (
         <nav className={cn("flex h-screen flex-col  bg-slate-900 border-r border-indigo-400/20 text-slate-400 hover:border-indigo-800/40 w-72 p-2",className)}
@@ -59,7 +33,10 @@ export  const NavBar = ({className, ...props}:NavBarProps)=>{
             <NavBarListItemLink href="/Walkthroughs">
               <RouteIcon className="w-4 h-4 "/> Walkthroughs
             </NavBarListItemLink>
+            
+            
           </NavBarList>
+          
 
           <NavBarList>
             <NavBarListItemLink href="/user">
