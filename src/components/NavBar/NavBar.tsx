@@ -4,8 +4,7 @@ import React from "react"
 import { NavBarProps } from "./types"
 import { NavBarList } from "./NavBarList"
 import { NavBarListItemLink } from "./NavBarListItemLink"
-import { NavBarListItemButton } from "./NavBarListItemButton"
-
+import Image from "next/image"
  
 
 export  const NavBar = ({className, ...props}:NavBarProps)=>{
@@ -14,10 +13,12 @@ export  const NavBar = ({className, ...props}:NavBarProps)=>{
         {...props}
         >
           <div className="flex items-center justify-center">
-            <img
+            <Image
               src="https://emersonbroga.com/e/assets/emersonbroga-logo-name-pink.png"
               alt="Logo EmersonBrogaDev"
               className="w-auto h-12 p-2 "
+              width={112}
+              height={32}
             />
           </div>
           <NavBarList className={"flex-grow"}>
