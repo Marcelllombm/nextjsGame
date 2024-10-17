@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={ cn("antialiased slate-890  text-slate-300 ",geistSans.variable,geistMono.variable)} >
+      <body className={ cn("antialiased bg-slate-890  text-slate-300 ",geistSans.variable,geistMono.variable)} >
         <NavBar/>
         {children}
       </body>
