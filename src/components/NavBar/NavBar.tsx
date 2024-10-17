@@ -1,15 +1,15 @@
 import { FaceHappyIcon, GamePadIcon, HomeIcon, PriceIcon, RouteIcon } from "@/components"
 import { cn } from "@/helpers/cn"
-import React from "react"
-import { NavBarProps } from "./types"
+import Image from "next/image"
 import { NavBarList } from "./NavBarList"
 import { NavBarListItemLink } from "./NavBarListItemLink"
-import Image from "next/image"
+import { NavBarProps } from "./types"
  
 
 export  const NavBar = ({className, ...props}:NavBarProps)=>{
     return (
-        <nav className={cn("flex h-screen flex-col  bg-slate-900 border-r border-indigo-400/20 text-slate-400 hover:border-indigo-800/40 w-72 p-2",className)}
+        <nav className={cn(
+          "fixed top-0 left-0 flex h-screen flex-col  bg-slate-900 border-r border-indigo-400/20 text-slate-300 hover:border-indigo-800/40 w-72 p-2",className)}
         {...props}
         >
           <div className="flex items-center justify-center">

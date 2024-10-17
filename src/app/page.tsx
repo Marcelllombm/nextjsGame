@@ -1,7 +1,10 @@
-import Image from "next/image";
 
 export default function Home() {
   return (
-   <h1>curso de nextjs</h1>
+    <div className="ml-72">
+      <div className="w-screen h-[35vh] bg-orange-400 flex-center">
+        <p>algo chamativo</p>
+      </div>
+   </div>
   );
 }

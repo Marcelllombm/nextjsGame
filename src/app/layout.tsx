@@ -1,7 +1,8 @@
+import { NavBar } from "@/components";
+import { cn } from "@/helpers/cn";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { NavBar } from "@/components";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex gap-2`} >
+      <body className={ cn("antialiased slate-890  text-slate-300 ",geistSans.variable,geistMono.variable)} >
         <NavBar/>
         {children}
       </body>

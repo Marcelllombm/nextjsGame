@@ -3,7 +3,6 @@ const nextConfig = {
     images: {
         remotePatterns: [
           {
-
             hostname: 'emersonbroga.com',
           },
         ],
