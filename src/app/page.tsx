@@ -1,3 +1,5 @@
+import articles from '@/data/articles.json'
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -17,6 +19,26 @@ export default function Home() {
         <div className="container mx-auto my-6">
           <div className="grid grid-cols-12 gap-4">
             <div className="col-span-8  flex flex-col gap-4">
+              {articles.map((article)=> {
+                return(
+                <div key={article.title} className="flex bg-slate-800 roundend-md py-4">
+                <div>
+                  <Image className='h-full w-full object-cover transition duration-500 hover:sale-105 rounded-r-lg' 
+                    src={`/assets/image/articles/${article.image}`}
+                    alt={article.title}
+                    width={600}
+                    height={400}
+                  />
+                </div>
+                <div className="flex flex-col gap-2 py-4">
+                  <h2 className="text-3xl">{article.title}</h2>
+                  <p className="flex-grow">{article.excerpt}o</p>
+                  <button type="button">Ler mais</button>
+                </div>
+              </div>
+              )
+              })}
+
               {/** Item */} 
               <div className="flex gap-4 bg-purple-500 rounded-md">
                 <div>
